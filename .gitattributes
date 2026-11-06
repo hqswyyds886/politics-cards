@@ -1,0 +1,7 @@
+# 统一 LF：shell 脚本带 CRLF 在 Linux 上会报 bad interpreter
+* text=auto eol=lf
+*.sh text eol=lf
+*.py text eol=lf
+*.service text eol=lf
+*.md text eol=lf
+*.db binary

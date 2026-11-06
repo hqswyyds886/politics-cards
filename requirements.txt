@@ -1,0 +1,4 @@
+# 核心功能零第三方依赖：仅用 Python 3.8+ 标准库（http.server / sqlite3 / hmac）。
+# 下面这些是可选增强，装了才启用，没装会自动降级：
+edge-tts>=6.1.0        # TTS_PROVIDER=edge 时的语音合成（朗读卡片）
+websockets>=12.0       # 讯飞 TTS 走 WebSocket（TTS_PROVIDER=xfyun 时需要）

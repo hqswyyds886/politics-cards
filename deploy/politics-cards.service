@@ -1,0 +1,20 @@
+[Unit]
+Description=Politics Cards - 考研政治刷题站 (stdlib + SQLite)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/politics-cards
+Environment=KAOYAN_PORT=8001
+Environment=PYTHONUNBUFFERED=1
+Environment=TTS_PROVIDER=edge
+# 可选：AI 能力（健身计划生成 / 网页内改代码）。留空则该功能自动降级关闭。
+# Environment=DEEPSEEK_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ExecStart=/usr/bin/python3 /opt/politics-cards/server.py
+Restart=always
+RestartSec=3
+StandardOutput=append:/var/log/politics-cards.log
+StandardError=append:/var/log/politics-cards.log
+
+[Install]
+WantedBy=multi-user.target
